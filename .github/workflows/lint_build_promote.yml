@@ -25,25 +25,31 @@ jobs:
 
 
   ################################
-  # Run NPM scripts & Chromatic  #
+  # Run NPM scripts              #
   ################################  
   build_and_test:
     name: Build and Test
     runs-on: ubuntu-latest
-<<<<<<< Updated upstream
     if: github.event.pull_request.merged == true
-=======
->>>>>>> Stashed changes
     needs: [lint]
     steps:
       - uses: actions/checkout@v1      
       - run: |
           npm install
+          npm run lint
           npm run test
           npm run build
 
 
   ################################
-  # Build & publish package      #
+  # Build & publish              #
   ################################
-  # TO DO: ADD FIREBASE deploy
+  deploy: 
+    name: Deploy to firebase
+    runs-on: ubuntu-latest
+    needs: [build_and_test]
+    steps:
+      - uses: actions/checkout@v1      
+      - run: |
+          npm install
+          npm run deploy
