@@ -53,8 +53,14 @@ prop.
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/shush">Shush</router-link>
+    <router-link to="/genedetails">Gene Details</router-link> |
+    <router-link to="/submitdata">Submit Data</router-link> |
+    <router-link to="/account">Account</router-link> |
+     <router-link to="/login">Login</router-link> |
+     <router-link to="/signup">Register</router-link> |
+     <router-link to="/404">404</router-link> |
+
+
   </div>
   <router-view/>
 </template>
