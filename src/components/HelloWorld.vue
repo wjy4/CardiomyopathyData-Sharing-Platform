@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1> test change </h1>
+  </div>
 </template>
 
 <script>
