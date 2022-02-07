@@ -1,0 +1,46 @@
+---
+name: "CI"
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  ################################
+  # Run GH Super Linter          #
+  ################################  
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Lint Code Base with super-lint
+        uses: github/super-linter/slim@v4
+        env:
+          VALIDATE_BASH: true
+          VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_JSON: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+  ################################
+  # Run NPM scripts & Chromatic  #
+  ################################  
+  build_and_test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    needs: [lint]
+    steps:
+      - uses: actions/checkout@v1      
+      - run: |
+          npm install
+          npm run test
+          npm run build
+
+
+  ################################
+  # Build & publish package      #
+  ################################
+  # TO DO: ADD FIREBASE deploy
