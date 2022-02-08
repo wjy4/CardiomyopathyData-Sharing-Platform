@@ -50,8 +50,6 @@ jobs:
     needs: [build_and_test]
     steps:
        - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}     
       - run: |
           npm install
           npm run deploy
