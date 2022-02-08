@@ -2,8 +2,8 @@
 name: "CI"
 on:
   push:
-    branches:
-      - main
+    branches: 
+      - master
   pull_request:
 
 jobs:
@@ -32,13 +32,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: [lint]
     steps:
-      - uses: actions/checkout@v1      
-      - run: |
-          npm install
-          npm run lint
-          npm run test
-          npm run build
-
+      - uses: actions/checkout@v2  
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'npm' 
+      - run: npm install
+      - run: npm run lint
+      - run: npm run test
+      - run: npm run build
 
   ################################
   # Build & publish              #
@@ -48,7 +50,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build_and_test]
     steps:
-      - uses: actions/checkout@v1      
+      - uses: actions/checkout@v2  
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'npm' 
       - run: |
           npm install
           npm run deploy
