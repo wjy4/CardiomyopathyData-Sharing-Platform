@@ -5,10 +5,8 @@
     <router-link to="/submitdata">Submit Data</router-link> |
     <router-link to="/account">Account</router-link> |
      <router-link to="/login">Login</router-link> |
-     <router-link to="/signup">Register</router-link> |
+     <router-link to="/register">Register</router-link> |
      <!-- <router-link to="/404">404</router-link> | -->
-
-
   </div>
   <router-view/>
 </template>
