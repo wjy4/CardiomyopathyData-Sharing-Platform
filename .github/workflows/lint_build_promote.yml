@@ -1,5 +1,5 @@
 ---
-name: "CI"
+name: "CI/CD"
 on:
   push:
     branches: 
@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Lint Code Base with super-lint
-        uses: github/super-linter/slim@v4
+        uses: github/super-linter/slim
         env:
           VALIDATE_BASH: true
           VALIDATE_JAVASCRIPT_ES: true
