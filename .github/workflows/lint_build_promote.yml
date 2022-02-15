@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Lint Code Base with super-lint
-        uses: github/super-linter@4.9
+        uses: github/super-linter@latest
         env:
           VALIDATE_BASH: true
           VALIDATE_JAVASCRIPT_ES: true
