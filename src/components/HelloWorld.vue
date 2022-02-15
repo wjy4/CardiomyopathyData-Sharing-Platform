@@ -1,16 +1,16 @@
 <template>
   <div class="hello">
-    <h1> test change </h1>
+    <h1>Cardiomyopathy Data Sharing Platform</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
-    msg: String
-  }
-}
+    msg: String,
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -28,5 +28,9 @@ li {
 }
 a {
   color: #42b983;
+}
+
+h1 {
+  text-decoration: underline;
 }
 </style>
