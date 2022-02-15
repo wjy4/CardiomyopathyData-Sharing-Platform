@@ -10,16 +10,20 @@
       src="../assets/CardianTransparent2.png"
     />
   </div>
+  <div class="container cards_display">
+    <CardsList />
+  </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
-
+import CardsList from "@/components/Cards/CardsList.vue";
 export default {
   name: "Home",
   components: {
     HelloWorld,
+    CardsList,
   },
 };
 </script>
@@ -28,28 +32,39 @@ export default {
 .heart {
   position: relative;
   top: -47px;
-  right: -45px;
+  right: 0px;
   float: right;
-  height: 25%;
-  width: 25%;
+  height: 20%;
+  width: 19%;
   transform: scaleX(-1);
 }
 
 .heartsmall {
   position: relative;
   top: -47px;
-  right: -185px;
+  right: -50px;
   float: right;
-  height: 15%;
-  width: 15%;
+  height: 10%;
+  width: 10%;
 }
 
 .cardiomessage {
-  height: 75%;
-  width: 100%;
+  height: 15%;
+  width: 75%;
   display: flex;
   position: fixed;
   align-items: center;
   justify-content: center;
+}
+
+.cards_display {
+  position: absolute;
+
+  bottom: 0px;
+  /* left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 100px; */
 }
 </style>
