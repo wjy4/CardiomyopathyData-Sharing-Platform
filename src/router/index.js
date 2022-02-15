@@ -32,7 +32,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../components/Login.vue"),
+      import(/* webpackChunkName: "about" */ "../views/Login.vue"),
   },
   {
     path: "/register",
@@ -41,17 +41,8 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../components/Register.vue"),
-  },
-  {
-    path: "/dashboard",
-    name: "Dashboard",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../components/Dashboard.vue"),
-  },  
+      import(/* webpackChunkName: "about" */ "../views/Register.vue"),
+  }, 
   {
     path: "/:catchAll(.*)",
     name: "404",
