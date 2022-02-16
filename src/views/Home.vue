@@ -11,11 +11,9 @@
     />
   </div>
   <div class="container cards_display">
-    <CardsList />
+    <CardsList :articles="articles" />
     <!-- <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-
-    <p>{{ articles }}</p>
   </div>
 </template>
 

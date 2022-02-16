@@ -4,9 +4,14 @@
       <div class="card-group">
         <div class="container-fluid">
           <div class="row">
-            <CardItem />
-            <CardItem />
-            <CardItem />
+            <div class="col-4" v-for="(art, index) in articles" :key="index">
+              <CardItem
+                :title="art.title"
+                :image="art.image"
+                :description="art.description"
+                :url="art.url"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -17,6 +22,7 @@
 import CardItem from "./CardItem.vue";
 export default {
   name: "CardsList",
+  props: ["articles"],
   components: {
     CardItem,
   },
