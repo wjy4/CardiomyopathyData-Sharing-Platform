@@ -8,7 +8,6 @@ import store from './store';
 import Vuex from "vuex";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyB86JL8qR8tG-KMiMHuCuVN5VgkyZfepKw",
     authDomain: "advancedwebassignment.firebaseapp.com",
     projectId: "advancedwebassignment",
     storageBucket: "advancedwebassignment.appspot.com",
