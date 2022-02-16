@@ -3,7 +3,7 @@
       <h2>Forgotten Password?</h2>
        <input type = "text" class = "textbox" placeholder="Email" v-model="email"/>
         <input @click="isShowing ^= true" type = "submit" class = "li" value="Send">
-        <h1 v-show="isShowing"> Email has been sent to you, Please check and verfity. </h1>  
+        <h1 v-show="isShowing"> Email has been sent to you, Please check your emails and verfity. </h1>  
     <p> Need an account ? </p>
   </div>
 </template>
