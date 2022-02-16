@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="cardiomessage">
-      <HelloWorld msg="cardio" />
+      <Hero msg="cardio" />
     </div>
     <img class="heart" alt="Cardiac" src="../assets/CardianTransparent2.png" />
     <img
@@ -19,14 +19,14 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import Hero from "@/components/Hero.vue";
 import CardsList from "@/components/Cards/CardsList.vue";
 import { getArticles } from "../api/newsFeedApi";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld,
+    Hero,
     CardsList,
   },
   data() {

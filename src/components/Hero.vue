@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="hero">
     <h1>Cardiomyopathy Data Sharing Platform</h1>
     <p>
       Cardiomyopathy is a disease of the heart muscle that makes it harder for
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "Hero",
   props: {
     msg: String,
   },
@@ -23,7 +23,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.hello {
+.hero {
   width: 74%;
 }
 h3 {
