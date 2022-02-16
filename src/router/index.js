@@ -61,6 +61,15 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "shush" */ "../views/GeneDetails.vue"),
   },
+  {
+    path: "/restpassword",
+    name: "RestPassword",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "shush" */ "../views/RestPassword.vue"),
+  },
 ];
 
 const router = createRouter({
