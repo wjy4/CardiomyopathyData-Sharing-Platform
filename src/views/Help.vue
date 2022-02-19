@@ -26,221 +26,35 @@
           </select>
 
           <div class="gif_display my-4">
-            <div v-if="help_item == '1'">
-              <p class="m-4">
-                Please navigate to the "Register" tab on the top right and fill
-                in the fields, a video demonstration is shown below:
-              </p>
-              <div
-                style="
-                  width: 100%;
-                  height: 0px;
-                  position: relative;
-                  padding-bottom: 56.25%;
-                "
-              >
-                <!-- Upload your video to https://streamable.com/ get the embedded link and paste it like how I've done  -->
-                <iframe
-                  src="https://streamable.com/e/i9383n"
-                  frameborder="0"
-                  width="100%"
-                  height="100%"
-                  allowfullscreen
+            <div v-for="(video, index) in videos_link" :key="index">
+              <div v-if="video.id == help_item">
+                <p class="m-4">
+                  {{ video.title }}
+                </p>
+                <div
                   style="
                     width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    left: 0px;
-                    top: 0px;
-                    overflow: hidden;
+                    height: 0px;
+                    position: relative;
+                    padding-bottom: 56.25%;
                   "
-                ></iframe>
-              </div>
-            </div>
-            <div v-if="help_item == '2'">
-              <p class="m-4">
-                Please navigate to the "Login" tab on the top right and fill in
-                the fields, a video demonstration is shown below:
-              </p>
-              <div
-                style="
-                  width: 100%;
-                  height: 0px;
-                  position: relative;
-                  padding-bottom: 56.25%;
-                "
-              >
-                <!-- Upload your video to https://streamable.com/ get the embedded link and paste it like how I've done  -->
-                <iframe
-                  src="https://streamable.com/e/i9383n"
-                  frameborder="0"
-                  width="100%"
-                  height="100%"
-                  allowfullscreen
-                  style="
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    left: 0px;
-                    top: 0px;
-                    overflow: hidden;
-                  "
-                ></iframe>
-              </div>
-            </div>
-            <div v-if="help_item == '3'">
-              <p class="m-4">
-                Please navigate to the "Account" tab while hovering over the
-                "Home" tab, a video demonstration is shown below:
-              </p>
-              <div
-                style="
-                  width: 100%;
-                  height: 0px;
-                  position: relative;
-                  padding-bottom: 56.25%;
-                "
-              >
-                <!-- Upload your video to https://streamable.com/ get the embedded link and paste it like how I've done  -->
-                <iframe
-                  src="https://streamable.com/e/i9383n"
-                  frameborder="0"
-                  width="100%"
-                  height="100%"
-                  allowfullscreen
-                  style="
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    left: 0px;
-                    top: 0px;
-                    overflow: hidden;
-                  "
-                ></iframe>
-              </div>
-            </div>
-            <div v-if="help_item == '4'">
-              <p class="m-4">
-                Please navigate to the "Submit Data" tab while hovering over the
-                "Home" tab, a video demonstration is shown below:
-              </p>
-              <div
-                style="
-                  width: 100%;
-                  height: 0px;
-                  position: relative;
-                  padding-bottom: 56.25%;
-                "
-              >
-                <!-- Upload your video to https://streamable.com/ get the embedded link and paste it like how I've done  -->
-                <iframe
-                  src="https://streamable.com/e/i9383n"
-                  frameborder="0"
-                  width="100%"
-                  height="100%"
-                  allowfullscreen
-                  style="
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    left: 0px;
-                    top: 0px;
-                    overflow: hidden;
-                  "
-                ></iframe>
-              </div>
-            </div>
-            <div v-if="help_item == '5'">
-              <p class="m-4">
-                Please navigate to the "???" tab while hovering over the "Home"
-                tab, a video demonstration is shown below:
-              </p>
-              <div
-                style="
-                  width: 100%;
-                  height: 0px;
-                  position: relative;
-                  padding-bottom: 56.25%;
-                "
-              >
-                <!-- Upload your video to https://streamable.com/ get the embedded link and paste it like how I've done  -->
-                <iframe
-                  src="https://streamable.com/e/i9383n"
-                  frameborder="0"
-                  width="100%"
-                  height="100%"
-                  allowfullscreen
-                  style="
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    left: 0px;
-                    top: 0px;
-                    overflow: hidden;
-                  "
-                ></iframe>
-              </div>
-            </div>
-            <div v-if="help_item == '6'">
-              <p class="m-4">
-                Please navigate to the "Query Data" tab while hovering over the
-                "Home" tab, a video demonstration is shown below:
-              </p>
-              <div
-                style="
-                  width: 100%;
-                  height: 0px;
-                  position: relative;
-                  padding-bottom: 56.25%;
-                "
-              >
-                <!-- Upload your video to https://streamable.com/ get the embedded link and paste it like how I've done  -->
-                <iframe
-                  src="https://streamable.com/e/i9383n"
-                  frameborder="0"
-                  width="100%"
-                  height="100%"
-                  allowfullscreen
-                  style="
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    left: 0px;
-                    top: 0px;
-                    overflow: hidden;
-                  "
-                ></iframe>
-              </div>
-            </div>
-            <div v-if="help_item == '7'">
-              <p class="m-4">
-                Please navigate to the "Gene Details" tab while hovering over
-                the "Home" tab, a video demonstration is shown below:
-              </p>
-              <div
-                style="
-                  width: 100%;
-                  height: 0px;
-                  position: relative;
-                  padding-bottom: 56.25%;
-                "
-              >
-                <!-- Upload your video to https://streamable.com/ get the embedded link and paste it like how I've done  -->
-                <iframe
-                  src="https://streamable.com/e/i9383n"
-                  frameborder="0"
-                  width="100%"
-                  height="100%"
-                  allowfullscreen
-                  style="
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    left: 0px;
-                    top: 0px;
-                    overflow: hidden;
-                  "
-                ></iframe>
+                >
+                  <iframe
+                    :src="video.src"
+                    frameborder="0"
+                    width="100%"
+                    height="100%"
+                    allowfullscreen
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      position: absolute;
+                      left: 0px;
+                      top: 0px;
+                      overflow: hidden;
+                    "
+                  ></iframe>
+                </div>
               </div>
             </div>
           </div>
@@ -249,12 +63,56 @@
     </div>
   </div>
 </template>
-
+<!-- Upload your video to https://streamable.com/ to get the link and paste it into the src like I have done-->
 <script>
 export default {
   data() {
     return {
       help_item: "default",
+      videos_link: [
+        {
+          id: "1",
+          title:
+            'Please navigate to the "Register" tab on the top right and fill in the fields, a video demonstration is shown below:',
+          src: "https://streamable.com/e/i9383n",
+        },
+        {
+          id: "2",
+          title:
+            'Please navigate to the "Login" tab on the top right and fill in the fields, a video demonstration is shown below:',
+          src: "https://streamable.com/e/i9383n",
+        },
+        {
+          id: "3",
+          title:
+            'Please navigate to the "Account" tab while hovering over the "Home" tab, a video demonstration is shown below:',
+          src: "https://streamable.com/e/i9383n",
+        },
+        {
+          id: "4",
+          title:
+            'Please navigate to the "Submit Data" tab while hovering over the "Home" tab, a video demonstration is shown below:',
+          src: "https://streamable.com/e/i9383n",
+        },
+        {
+          id: "5",
+          title:
+            'Please navigate to the "???" tab while hovering over the "Home" tab, a video demonstration is shown below:',
+          src: "https://streamable.com/e/i9383n",
+        },
+        {
+          id: "6",
+          title:
+            'Please navigate to the "???" tab while hovering over the "Home" tab, a video demonstration is shown below:',
+          src: "https://streamable.com/e/i9383n",
+        },
+        {
+          id: "7",
+          title:
+            'Please navigate to the "Gene Details" tab while hovering over the "Home" tab, a video demonstration is shown below:',
+          src: "https://streamable.com/e/i9383n",
+        },
+      ],
     };
   },
 };
