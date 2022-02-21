@@ -1,48 +1,41 @@
 <template>
+<div class="container">
   <h1>Register</h1>
-  <div>
-    <el-form :model="form" @submit.prevent="submit">
-      <el-form-item label="Name">
-          <el-input
-            id="name"
-            type="name"
-            class="form-control"
-            name="name"
-            value
-            required
-            autofocus
-            v-model="form.name"
-          />
-      </el-form-item>
-      <el-form-item label="Email">
-          <el-input
-            id="email"
-            type="email"
-            class="form-control"
-            name="email"
-            value
-            required
-            autofocus
-            v-model="form.email"
-          />
-      </el-form-item>
-      <el-form-item label="Password">
-          <el-input
-            id="password"
-            type="password"
-            class="form-control"
-            name="password"
-            required
-            v-model="form.password"
-          />
-      </el-form-item>
-      <div>
-        <div>
-          <el-button type="primary" @click="submit">Register</el-button>
-        </div>
-      </div>
-    </el-form>
-  </div>
+  <form :model="form" @submit.prevent="submit">
+    <label for="name">Name</label>
+    <input
+      id="name"
+      type="name"
+      class="form-control"
+      name="name"
+      value
+      required
+      autofocus
+      v-model="form.name"
+    />
+    <label for="email">Email</label>
+    <input
+      id="email"
+      type="email"
+      class="form-control"
+      name="email"
+      value
+      required
+      autofocus
+      v-model="form.email"
+    />
+    <label for="password">Password</label>
+    <input
+      id="password"
+      type="password"
+      class="form-control"
+      name="password"
+      required
+      v-model="form.password"
+    />
+    <button class="btn btn-primary" type="button" @click="submit">Register</button>
+  </form>
+</div>
 </template>
 
 
