@@ -46,7 +46,7 @@
             >Login</router-link
           >
 
-          <router-link tag="li" class-active="active" to="/signup"
+          <router-link tag="li" class-active="active" to="/register"
             >Register</router-link
           >
         </div>
