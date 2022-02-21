@@ -1,9 +1,10 @@
 <template>
-  <h1>Login</h1>
-  <div>
-    <el-form :model="form" @submit.prevent="submit">
-      <el-form-item label="Email">
-        <el-input
+  <div class="container">
+    <h1>Login</h1>
+    <form :model="form" @submit.prevent="submit">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
           id="email"
           type="email"
           class="form-control"
@@ -13,9 +14,8 @@
           autofocus
           v-model="form.email"
         />
-      </el-form-item>
-      <el-form-item label="Password">
-        <el-input
+        <label for="password">Password</label>
+        <input
           id="password"
           type="password"
           class="form-control"
@@ -23,16 +23,12 @@
           required
           v-model="form.password"
         />
-      </el-form-item>
-      <div>
-        <div>
-          <el-button type="primary" @click="submit">Login</el-button>
-        </div>
       </div>
-    </el-form>
+      <button class="btn btn-primary" type="button" @click="submit">Login</button>
+    </form>
     <div class="login">
-     <p> Forgot your Password ?
-     <router-link to="/resetpassword">Rest Password</router-link> </p>
+     <p> Forgot your Password? 
+     <router-link to="/resetpassword">Reset Password</router-link> </p>
     </div>
   </div>
 </template>
@@ -52,8 +48,8 @@ export default {
       firebase
         .auth()
         .signInWithEmailAndPassword(form.email, form.password)
-        .then(() => {
-          //some stuff for after login
+        .then((data) => {
+          console.log("logged in ", data);
         })
         .catch((err) => {
           console.log("error: " + err);
@@ -62,6 +58,7 @@ export default {
 
         if(user){
             console.log("logged in");
+            console.log(user)
         }else{
             console.log("not logged in")
         }
