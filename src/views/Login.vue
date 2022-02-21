@@ -30,6 +30,10 @@
         </div>
       </div>
     </el-form>
+    <div class="login">
+     <p> Forgot your Password ?
+     <router-link to="/RestPassword">Rest Password</router-link> </p>
+    </div>
   </div>
 </template>
 
