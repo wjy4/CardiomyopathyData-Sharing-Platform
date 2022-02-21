@@ -59,8 +59,7 @@ jobs:
               then echo "live";
             else echo "${GITHUB_REF_NAME}";
             fi
-          )
-          echo channel_id"
+          )"
 
       - uses: actions/checkout@v2
       - run: npm ci && npm run build
