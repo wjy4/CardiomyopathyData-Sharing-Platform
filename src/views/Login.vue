@@ -39,6 +39,7 @@
 <script>
 import firebase from "firebase";
 import {reactive} from "vue";
+import router from '../router/index';
 
 export default {
   setup() {
@@ -56,13 +57,16 @@ export default {
       firebase
         .auth()
         .signInWithEmailAndPassword(form.email, form.password)
-        .then((data) => {
-          console.log("logged in ", data);
-        })
         .catch((err) => {
           error.error = true
           error.errorMessage = err
         });
+
+      const user = firebase.auth().currentUser;
+      
+      if (user){
+        router.push({ path: '/account' })
+      }
     }
   
   return {form, submit, error};
