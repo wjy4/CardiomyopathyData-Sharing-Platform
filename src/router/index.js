@@ -10,14 +10,14 @@ const routes = [
   {
     path: "/account",
     name: "Account",
-    
+
     component: () =>
       import( "../views/Account.vue"),
   },
   {
     path: "/submitdata",
     name: "SubmitData",
-    
+
     component: () =>
       import( "../views/SubmitData.vue"),
   },
@@ -33,28 +33,39 @@ const routes = [
   {
     path: "/login",
     name: "Login",
-    
+
     component: () =>
       import( "../views/Login.vue"),
   },
   {
-    path: "/signup",
-    name: "Signup",
-    
+    path: "/register",
+    name: "Register",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
     component: () =>
-      import( "../views/Signup.vue"),
+      import(/* webpackChunkName: "about" */ "../views/Register.vue"),
+  },
+  {
+    path: "/dashboard",
+    name: "Dashboard",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Dashboard.vue"),
   },
   {
     path: "/:catchAll(.*)",
     name: "404",
-    
+
     component: () => import( "../views/404.vue"),
   },
 
   {
     path: "/genedetails",
     name: "GeneDetails",
-    
+
     component: () => import( "../views/GeneDetails.vue"),
   },
 ];
