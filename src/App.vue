@@ -60,42 +60,5 @@
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-#nav {
-  padding: 0px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-.custom-dropdown-menu {
-  display: none;
-  position: absolute;
-  padding: 10px;
-  background: #fff;
-  border: 1px solid #eee;
-  box-sizing: border-box;
-}
-.show-dropdow-on-hover {
-  list-style: none;
-  position: relative;
-}
-.show-dropdow-on-hover:hover .custom-dropdown-menu {
-  display: block;
-}
-.mr-10 {
-  margin-right: 10px;
-}
 </style>
