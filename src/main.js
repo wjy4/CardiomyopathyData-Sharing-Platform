@@ -22,6 +22,7 @@ const auth = firebase.auth();
 
 firebase.auth().onAuthStateChanged(user => {
   store.dispatch("fetchUser", user);
+  router.push({path: "/account"})
 });
 
 app.use(router)
