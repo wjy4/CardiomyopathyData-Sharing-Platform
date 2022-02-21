@@ -54,6 +54,13 @@ export default {
         .catch((err) => {
           console.log("error: " + err);
         });
+        const user = firebase.auth().currentUser;
+
+        if(user){
+            console.log("logged in");
+        }else{
+            console.log("not logged in")
+        }
     }
   
   return {form, submit};
