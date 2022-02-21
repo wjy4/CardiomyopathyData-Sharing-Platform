@@ -10,6 +10,7 @@
     "deploy": "echo deployment not set up"
   },
   "dependencies": {
+    "bootstrap": "^5.1.3",
     "core-js": "^3.6.5",
     "element-plus": "^2.0.1",
     "firebase": "^8.10.0",

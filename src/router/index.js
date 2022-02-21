@@ -10,27 +10,30 @@ const routes = [
   {
     path: "/account",
     name: "Account",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Account.vue"),
+      import( "../views/Account.vue"),
   },
   {
     path: "/submitdata",
     name: "SubmitData",
+
+    component: () =>
+      import( "../views/SubmitData.vue"),
+  },
+  {
+    path: "/help",
+    name: "Help",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/SubmitData.vue"),
+      import(/* webpackChunkName: "about" */ "../views/Help.vue"),
   },
   {
     path: "/login",
     name: "Login",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Login.vue"),
   },
@@ -42,24 +45,28 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Register.vue"),
-  }, 
+  },
   {
-    path: "/:catchAll(.*)",
-    name: "404",
+    path: "/dashboard",
+    name: "Dashboard",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ "../views/404.vue"),
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Dashboard.vue"),
+  },
+  {
+    path: "/:catchAll(.*)",
+    name: "404",
+
+    component: () => import( "../views/404.vue"),
   },
 
   {
     path: "/genedetails",
     name: "GeneDetails",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "shush" */ "../views/GeneDetails.vue"),
+
+    component: () => import( "../views/GeneDetails.vue"),
   },
 ];
 

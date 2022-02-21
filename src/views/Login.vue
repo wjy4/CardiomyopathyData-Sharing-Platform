@@ -1,68 +1,55 @@
 <template>
-  <div>Login</div>
+  <h1>Login</h1>
   <div>
-    <form @submit.prevent="submit">
-      <div>
-        <label for="email">Email</label>
-
-        <div>
-          <input
-            id="email"
-            type="email"
-            class="form-control"
-            name="email"
-            value
-            required
-            autofocus
-            v-model="form.email"
-          />
-        </div>
-      </div>
-
-      <div>
-        <label for="password">Password</label>
-
-        <div>
-          <input
-            id="password"
-            type="password"
-            class="form-control"
-            name="password"
-            required
-            v-model="form.password"
-          />
-        </div>
-      </div>
-
+    <el-form :model="form" @submit.prevent="submit">
+      <el-form-item label="Email">
+        <el-input
+          id="email"
+          type="email"
+          class="form-control"
+          name="email"
+          value
+          required
+          autofocus
+          v-model="form.email"
+        />
+      </el-form-item>
+      <el-form-item label="Password">
+        <el-input
+          id="password"
+          type="password"
+          class="form-control"
+          name="password"
+          required
+          v-model="form.password"
+        />
+      </el-form-item>
       <div>
         <div>
-          <button @click="submit">Login</button>
+          <el-button type="primary" @click="submit">Login</el-button>
         </div>
       </div>
-    </form>
+    </el-form>
   </div>
 </template>
 
 <script>
 import firebase from "firebase";
+import {reactive} from "vue";
 
 export default {
-  data() {
-    return {
-      form: {
-        email: "",
-        password: "",
-      },
-      error: null,
-    };
-  },
-  methods: {
-    submit() {
+  setup() {
+    const form = reactive({
+      email: '',
+      password: ''
+    });
+
+    function submit() {
       firebase
         .auth()
-        .signInWithEmailAndPassword(this.form.email, this.form.password)
+        .signInWithEmailAndPassword(form.email, form.password)
         .then(() => {
-            //some stuff for after login
+          //some stuff for after login
         })
         .catch((err) => {
           console.log("error: " + err);
@@ -74,7 +61,9 @@ export default {
         }else{
             console.log("not logged in")
         }
-    },
+    }
+  
+  return {form, submit};
   },
 };
 </script>

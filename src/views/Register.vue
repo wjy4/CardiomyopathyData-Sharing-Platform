@@ -1,88 +1,80 @@
 <template>
-  <form @submit.prevent="submit">
-    <div class="form-group">
-      <label for="name">Name</label>
+  <h1>Register</h1>
+  <div>
+    <el-form :model="form" @submit.prevent="submit">
+      <el-form-item label="Name">
+          <el-input
+            id="name"
+            type="name"
+            class="form-control"
+            name="name"
+            value
+            required
+            autofocus
+            v-model="form.name"
+          />
+      </el-form-item>
+      <el-form-item label="Email">
+          <el-input
+            id="email"
+            type="email"
+            class="form-control"
+            name="email"
+            value
+            required
+            autofocus
+            v-model="form.email"
+          />
+      </el-form-item>
+      <el-form-item label="Password">
+          <el-input
+            id="password"
+            type="password"
+            class="form-control"
+            name="password"
+            required
+            v-model="form.password"
+          />
+      </el-form-item>
       <div>
-        <input
-          id="name"
-          type="name"
-          class="form-control"
-          name="name"
-          value
-          required
-          autofocus
-          v-model="form.name"
-        />
+        <div>
+          <el-button type="primary" @click="submit">Register</el-button>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="email">Email</label>
-      <div>
-        <input
-          id="email"
-          type="email"
-          class="form-control"
-          name="email"
-          value
-          required
-          autofocus
-          v-model="form.email"
-        />
-      </div>
-    </div>
-    <div>
-      <label for="password">Password</label>
-
-      <div>
-        <input
-          id="password"
-          type="password"
-          class="form-control"
-          name="password"
-          required
-          v-model="form.password"
-        />
-      </div>
-    </div>
-    <div>
-      <div>
-        <button @click="submit">Register</button>
-      </div>
-    </div>
-  </form>
+    </el-form>
+  </div>
 </template>
 
 
 <script>
 import firebase from "firebase";
+import { reactive } from "vue";
 
 export default {
-  data() {
-    return {
-      form: {
-        name: "",
-        email: "",
-        password: "",
-      },
-      error: null,
-    };
-  },
-  methods: {
-    submit() {
+  setup() {
+    const form = reactive({
+      name: "",
+      email: "",
+      password: ""
+    });
+
+    function submit() {
       firebase
         .auth()
-        .createUserWithEmailAndPassword(this.form.email, this.form.password)
+        .createUserWithEmailAndPassword(form.email, form.password)
         .then((data) => {
           data.user
             .updateProfile({
-              displayName: this.form.name,
+              displayName: form.name,
             })
             .then(() => {});
         })
         .catch((err) => {
           console.log("error: " + err);
         });
-    },
+    }
+
+    return {submit, form};
   },
 };
 </script>
