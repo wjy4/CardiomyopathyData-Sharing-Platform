@@ -28,6 +28,7 @@ jobs:
   ################################
   build_and_test:
     name: Build and Test
+    needs: [lint]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -45,6 +46,7 @@ jobs:
   ################################
   deploy:
     name: Deploy to Firebase
+    needs: [lint, build_and_test]
     runs-on: ubuntu-latest
     steps:
       - name: Extract branch name
@@ -57,7 +59,8 @@ jobs:
               then echo "live";
             else echo "${GITHUB_REF_NAME}";
             fi
-          )"
+          )
+          echo channel_id"
 
       - uses: actions/checkout@v2
       - uses: FirebaseExtended/action-hosting-deploy@v0
