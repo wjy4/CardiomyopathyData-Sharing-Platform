@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="container">
     <div class="hero">
       <h1>Cardiomyopathy Data Sharing Platform</h1>
       <p>
