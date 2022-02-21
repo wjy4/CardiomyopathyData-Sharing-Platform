@@ -27,8 +27,11 @@
       <button class="btn btn-primary" type="button" @click="submit">Login</button>
     </form>
     <div class="login">
-     <p> Forgot your Password? 
+     <p>Forgot your Password? 
      <router-link to="/resetpassword">Reset Password</router-link> </p>
+    </div>
+    <div v-if="error.error" class="alert alert-warning" role="alert">
+      {{error.errorMessage}}
     </div>
   </div>
 </template>
@@ -39,6 +42,11 @@ import {reactive} from "vue";
 
 export default {
   setup() {
+    const error = reactive({
+      error: false,
+      errorMessage: "",
+    });
+
     const form = reactive({
       email: '',
       password: ''
@@ -52,19 +60,12 @@ export default {
           console.log("logged in ", data);
         })
         .catch((err) => {
-          console.log("error: " + err);
+          error.error = true
+          error.errorMessage = err
         });
-        const user = firebase.auth().currentUser;
-
-        if(user){
-            console.log("logged in");
-            console.log(user)
-        }else{
-            console.log("not logged in")
-        }
     }
   
-  return {form, submit};
+  return {form, submit, error};
   },
 };
 </script>
