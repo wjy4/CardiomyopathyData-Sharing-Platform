@@ -49,7 +49,7 @@ export default {
 
     function logOut(){
       firebase.auth().signOut();
-      router.push({path: "/account"})
+      router.push({path: "/"})
     }
 
     return {logOut}

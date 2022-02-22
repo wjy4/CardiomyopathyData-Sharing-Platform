@@ -37,6 +37,7 @@
 import { ref, reactive } from "vue";
 import { firestore } from "../main";
 import { convertCSVtoJson, extractDataAndConvertToModel } from "../scripts/fileupload";
+import firebase from "firebase";
 
 export default {
   setup(){
@@ -52,6 +53,7 @@ export default {
       numRecords: 0,
     });
 
+    const uid = firebase.auth()?.currentUser?.uid;
 
     function onFileUploaded(event) {
       var reader = new FileReader();
@@ -91,6 +93,7 @@ export default {
       isProcessing.value = true;
 
       data.value.forEach(item => {
+        item["owner"] = uid;
         firestore.collection("patientData").add(item)
         .then(() => {
           success.numRecords += 1;
