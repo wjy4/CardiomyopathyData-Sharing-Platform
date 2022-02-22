@@ -1,12 +1,28 @@
 <template>
-  <div>
-    <input id="upload" type="file" @change="onFileUploaded" accept="text/json" />
-    <template v-if="!isProcessing">
-      <button @click="onSubmit"> Submit data </button>
-    </template>
-    <template v-else>
-      Populating
-    </template>
+  <div class="container">
+    <h1>Submit data</h1>
+    <p>To submit data to visualise and share with others, you have 2 options, you can either: 
+      <ul>
+        <li>upload a file with the nessecary data or</li>
+        <li>manually enter the data for each case study one by one below</li>
+      </ul> 
+    </p>
+    <h2>Upload a file</h2>
+    <form>
+      <div class="form-group my-5">
+        <input id="upload" type="file" @change="onFileUploaded" class="form-control-file" accept="text/json" />
+        <template v-if="!isProcessing">
+          <button class="btn btn-warning" @click="onSubmit"> Submit data </button>
+        </template>
+
+        <template v-else>
+          <p>Populating</p>
+        </template>
+      </div>
+    </form>
+
+    <h2>Manual data insert</h2>
+
   </div>
 </template>
 
