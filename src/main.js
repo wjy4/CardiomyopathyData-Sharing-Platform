@@ -5,13 +5,16 @@ import firebase from "firebase";
 import store from './store';
 import Vuex from "vuex";
 
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyB86JL8qR8tG-KMiMHuCuVN5VgkyZfepKw",
-  authDomain: "advancedwebassignment.firebaseapp.com",
-  projectId: "advancedwebassignment",
-  storageBucket: "advancedwebassignment.appspot.com",
-  messagingSenderId: "451838322437",
-  appId: "1:451838322437:web:819a6ba925591c8ac8396c"
+  apiKey: "AIzaSyBahnGXrBYujkxsql_RvBJENFxcr67oaFE",
+  authDomain: "cardiomyopathydataplatform.firebaseapp.com",
+  databaseURL: "https://cardiomyopathydataplatform-default-rtdb.firebaseio.com",
+  projectId: "cardiomyopathydataplatform",
+  storageBucket: "cardiomyopathydataplatform.appspot.com",
+  messagingSenderId: "1008168044389",
+  appId: "1:1008168044389:web:155899fb46eb2298b5838c",
+  measurementId: "G-DE6CM3QWT9"
 };
 
 
