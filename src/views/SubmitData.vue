@@ -27,11 +27,75 @@
     <div v-if="success.success" class="alert alert-success w-75 my-3" role="alert">
       Successfully added {{success.numRecords}} records to the database.
     </div>
+    <h2>Manual data insert</h2> 
+    <form id="manualdata" v-if="!isProcessing"> 
+     <h5> (All input must be a number)</h5>
+  <p>Left ventricular end diastolic volume (LEDV) :</p>
+         <input type="text" v-model="LEDV" @keypress="isNumber($event)"> 
+  <p>Right ventricular end diastolic volume (REDV) :</p>
+        <input type="text" v-model="REDV" @keypress="isNumber($event)">
+    <p>Left ventricular end systolic volume (LESV) : </p>
+        <input type="text" v-model="LESV" @keypress="isNumber($event)">
+    <p>Right ventricular end systolic volume (RESV) :</p>
+         <input type="text" v-model="RESV" @keypress="isNumber($event)">
+    <p>Left ventricular ejection fraction (LVEF) :</p>
+        <input type="text" v-model="LVEF" @keypress="isNumber($event)"> 
+    <p>Right ventricular ejection fraction (RVEF) :</p>
+        <input type="text" v-model="RVEF" @keypress="isNumber($event)">
+    <p>Left ventricular mass (LVMASS) : </p>
+        <input type="text" v-model="LVMASS" @keypress="isNumber($event)">
+    <p>Right ventricular mass (RVMASS) : </p>
+        <input type="text" v-model="RVMASS" @keypress="isNumber($event)">
+    <p>Left systolic volume (LSV) :</p>
+        <input type="text" v-model="LSV" @keypress="isNumber($event)">
+    <p>Right systolic volume (RSV) : </p>
+        <input type="text" v-model="LSV" @keypress="isNumber($event)">
 
-    <h2>Manual data insert</h2>
+   <p>Fibrosis or Scarring：
+    <select v-model="scar">
+      <option>fibrosis</option>
+      <option>scarring</option>
+    </select>
+   </p>
+   <p>Gender :
+    <select v-model="gender">
+      <option>Male</option>
+      <option>Female</option>
+      <option>Prefer not to say</option>
+    </select>
+   </p>
 
+    <p>Age at MRI :
+    <input type="text" v-model="MRI" @keypress="isNumber($event)">
+  </p>
+    <p>Apical HCM :
+    <input type="radio" name="HCM" value="Yes" v-model="HCM"> Yes
+    <input type="radio" name="HCM" value="No" v-model="HCM"> No
+  </p>
+
+    <p>Sudden cardiac death : 
+    <input type="radio" name="SCD" value="Yes" v-model="SCD"> Yes
+    <input type="radio" name="SCD" value="No" v-model="SCD"> No
+  </p>
+    <p>Hypertension : 
+    <input type="radio" name="Hypertension" value="Yes" v-model="Hypertension"> Yes
+    <input type="radio" name="Hypertension" value="No" v-model="Hypertension"> No
+  </p>
+    <p>Diabetes : 
+    <input type="radio" name="diabetes" value="Yes" v-model="diabetes"> Yes
+    <input type="radio" name="diabetes" value="No" v-model="diabetes"> No
+  </p>
+    <p>Myectomy : 
+    <input type="radio" name="myectomy" value="Yes" v-model="myectomy"> Yes
+    <input type="radio" name="myectomy" value="No" v-model="myectomy"> No
+  </p>
+   <button class="btn btn-warning" @click="onSubmit"> Submit data </button>
+  </form>
   </div>
+
+
 </template>
+
 
 <script>
 import { ref, reactive } from "vue";
@@ -108,7 +172,19 @@ export default {
     }
 
     return {onFileUploaded, onSubmit, isProcessing, error, success}
+  },
+   methods: {
+    isNumber: function(evt) {
+      evt = (evt) ? evt : window.event;
+      var charCode = (evt.which) ? evt.which : evt.keyCode;
+      if ((charCode > 31 && (charCode < 48 || charCode > 57)) && charCode !== 46) {
+        evt.preventDefault();
+      } else {
+        return true;
+      }
+    }
   }
+  
 }
 </script>
 <style>
